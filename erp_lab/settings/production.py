@@ -1,6 +1,6 @@
 from .base import *
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['kdmpsumberoto.teknusa.com', 'www.kdmpsumberoto.teknusa.com']
 CSRF_TRUSTED_ORIGINS = ['https://kdmpsumberoto.teknusa.com', 'https://www.kdmpsumberoto.teknusa.com']
