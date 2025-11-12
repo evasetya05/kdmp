@@ -6,15 +6,10 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8 text-center">
-            <h1 class="display-4 mb-4">Selamat Datang di ERP Lab</h1>
+            <h1 class="display-4 mb-4">Selamat Datang di Koperasi Desa Merah Putih Desa Sumberoto</h1>
             <p class="lead mb-5">Sistem Manajemen Terpadu untuk Bisnis Anda</p>
             
-            {% if not user.is_authenticated %}
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <a href="{% url 'login' %}" class="btn btn-primary btn-lg px-4 me-sm-3">Masuk</a>
-                <a href="{% url 'users:users-register' %}" class="btn btn-outline-secondary btn-lg px-4">Daftar</a>
-            </div>
-            {% else %}
+            {% if user.is_authenticated %}
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 <a href="{% url 'dashboard' %}" class="btn btn-primary btn-lg px-4 me-sm-3">Masuk ke Dashboard</a>
             </div>
