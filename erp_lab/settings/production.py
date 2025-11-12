@@ -8,9 +8,9 @@ CSRF_TRUSTED_ORIGINS = ['https://erp.teknusa.com', 'https://www.erp.teknusa.com'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'teknusas_erp_lab',
-        'USER': 'teknusas_erp_lab',
-        'PASSWORD': '@Pontianak123',
+        'NAME': 'teknusas_kdmp',
+        'USER': 'teknusas_kdmp',
+        'PASSWORD': '@Sumberoto123',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
