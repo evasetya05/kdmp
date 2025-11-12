@@ -11,6 +11,9 @@
                 <h6 class="m-0 font-weight-bold text-primary">Daftar Anggota Koperasi</h6>
                 <div class="d-flex align-items-center">
                     <span class="badge bg-info me-2">{{ anggota_list|length }} Anggota</span>
+                    <a href="{% url 'anggota:create' %}" class="btn btn-primary btn-sm">
+                        <i class="fas fa-plus"></i> Tambah Anggota
+                    </a>
                 </div>
             </div>
             <div class="card-body p-0">
@@ -18,14 +21,15 @@
                     <table class="table table-bordered table-hover data-table mb-0" width="100%" cellspacing="0">
                         <thead class="table-light">
                             <tr>
-                                <th class="text-center" style="width: 5%;">#</th>
-                                <th style="width: 15%;">NIK</th>
-                                <th style="width: 20%;">Nama Lengkap</th>
-                                <th class="text-center" style="width: 8%;">JK</th>
-                                <th style="width: 15%;">Email</th>
-                                <th class="text-center" style="width: 8%;">RT</th>
-                                <th class="text-center" style="width: 12%;">Status</th>
+                                <th class="text-center" style="width: 4%;">#</th>
+                                <th style="width: 14%;">NIK</th>
+                                <th style="width: 18%;">Nama Lengkap</th>
+                                <th class="text-center" style="width: 7%;">JK</th>
+                                <th style="width: 14%;">Email</th>
+                                <th class="text-center" style="width: 7%;">RT</th>
+                                <th class="text-center" style="width: 11%;">Status</th>
                                 <th style="width: 12%;">Tgl Daftar</th>
+                                <th class="text-center" style="width: 13%;">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,16 +56,33 @@
                                 </td>
                                 <td class="text-center">
                                     {% if anggota.status_verifikasi == 'verified' %}
-                                        <span class="badge bg-success">✓</span>
+                                        <span class="badge bg-success">Terverifikasi</span>
                                     {% else %}
-                                        <span class="badge bg-warning">○</span>
+                                        <span class="badge bg-warning">Pending</span>
                                     {% endif %}
                                 </td>
                                 <td><small>{{ anggota.tanggal_daftar|date:"d/m/y" }}</small></td>
+                                <td class="text-center">
+                                    <div class="btn-group" role="group">
+                                        <a href="{% url 'anggota:update' anggota.pk %}" class="btn btn-sm btn-primary" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        {% if user.is_staff or user.is_superuser %}
+                                            {% if anggota.status_verifikasi == 'pending' %}
+                                                <a href="{% url 'anggota:approve' anggota.pk %}" class="btn btn-sm btn-success" title="Setujui">
+                                                    <i class="fas fa-check"></i>
+                                                </a>
+                                                <a href="{% url 'anggota:reject' anggota.pk %}" class="btn btn-sm btn-danger" title="Tolak">
+                                                    <i class="fas fa-times"></i>
+                                                </a>
+                                            {% endif %}
+                                        {% endif %}
+                                    </div>
+                                </td>
                             </tr>
                             {% empty %}
                             <tr>
-                                <td colspan="8" class="text-center py-4">
+                                <td colspan="9" class="text-center py-4">
                                     <div class="text-muted">
                                         <i class="fas fa-users fa-2x mb-2"></i>
                                         <br>Belum ada data anggota
