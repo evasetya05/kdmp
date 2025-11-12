@@ -54,3 +54,13 @@
     </div>
 </div>
 {% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+<style>
+    /* Override sidebar margin for landing page to center content */
+    .main-content {
+        margin-left: 0 !important;
+    }
+</style>
+{% endblock %}
