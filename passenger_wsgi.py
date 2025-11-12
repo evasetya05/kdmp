@@ -2,7 +2,7 @@ import os
 import sys
 
 # Tambahkan path project agar Python tahu di mana kode Django kamu
-sys.path.append('/home/teknusas/kdmp')
+sys.path.append('/home/teknusas/kdmpsumberoto')
 sys.path.append('/home/teknusas/kdmpsumberoto/erp_lab')
 
 # Gunakan environment variable DJANGO_SETTINGS_MODULE dari server
