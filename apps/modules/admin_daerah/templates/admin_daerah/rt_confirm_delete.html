@@ -1,0 +1,37 @@
+{% extends 'admin_daerah/base.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans 'Hapus RT' %}{% endblock %}
+
+{% block content_title %}{% trans 'Konfirmasi Hapus RT' %}{% endblock %}
+
+{% block content_body %}
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 bg-danger text-white">
+                <h6 class="m-0 font-weight-bold">{% trans 'Konfirmasi Penghapusan' %}</h6>
+            </div>
+            <div class="card-body">
+                <p>{% trans 'Anda yakin ingin menghapus RT ini?' %}</p>
+                <div class="alert alert-warning">
+                    <strong>{% trans 'RT:' %}</strong> RT {{ object.nomor }} - RW {{ object.rw.nomor }} - {{ object.rw.dusun.nama }}
+                </div>
+                <p class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    {% trans 'Perhatian: Tindakan ini tidak dapat dibatalkan.' %}
+                </p>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-trash"></i> {% trans 'Ya, Hapus' %}
+                    </button>
+                    <a href="{% url 'admin_daerah:rt_list' %}" class="btn btn-secondary">
+                        <i class="fas fa-times"></i> {% trans 'Batal' %}
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

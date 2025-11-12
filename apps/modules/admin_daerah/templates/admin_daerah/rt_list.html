@@ -1,0 +1,66 @@
+{% extends 'admin_daerah/base.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans 'Daftar RT' %}{% endblock %}
+
+{% block content_title %}{% trans 'Daftar Rukun Tetangga (RT)' %}{% endblock %}
+
+{% block actions %}
+<a href="{% url 'admin_daerah:rt_create' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+    <i class="fas fa-plus fa-sm text-white-50"></i> {% trans 'Tambah RT' %}
+</a>
+{% endblock %}
+
+{% block content_body %}
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered data-table" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>{% trans 'Dusun' %}</th>
+                        <th>{% trans 'RW' %}</th>
+                        <th>{% trans 'Nomor RT' %}</th>
+                        
+                        <th>{% trans 'Aksi' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for rt in rt_list %}
+                    <tr>
+                        <td>{{ rt.rw.dusun.nama }}</td>
+                        <td>RW {{ rt.rw.nomor }}</td>
+                        <td>RT {{ rt.nomor }}</td>
+                        
+                        <td>
+                            <a href="{% url 'admin_daerah:rt_update' rt.pk %}" class="btn btn-sm btn-primary" title="{% trans 'Edit' %}">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="{% url 'admin_daerah:rt_delete' rt.pk %}" class="btn btn-sm btn-danger" title="{% trans 'Hapus' %}" 
+                               onclick="return confirm('Apakah Anda yakin ingin menghapus RT ini?')">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6" class="text-center">{% trans 'Belum ada data RT' %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+<link href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+{% endblock %}

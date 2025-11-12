@@ -1,0 +1,51 @@
+{% extends 'admin_daerah/base.html' %}
+{% load i18n %}
+
+{% block page_title %}{% if object %}{% trans 'Edit Dusun' %}{% else %}{% trans 'Tambah Dusun' %}{% endif %}{% endblock %}
+
+{% block content_title %}{% if object %}{% trans 'Edit Dusun' %}{% else %}{% trans 'Tambah Dusun Baru' %}{% endif %}{% endblock %}
+
+{% block content_body %}
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">{% trans 'Form Dusun' %}</h6>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_nama">{% trans 'Nama Dusun' %} <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control {% if form.nama.errors %}is-invalid{% endif %}" 
+                               id="id_nama" name="nama" value="{{ form.nama.value|default:'' }}" required>
+                        {% if form.nama.errors %}
+                            <div class="invalid-feedback">
+                                {{ form.nama.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_keterangan">{% trans 'Keterangan' %}</label>
+                        <textarea class="form-control {% if form.keterangan.errors %}is-invalid{% endif %}" 
+                                 id="id_keterangan" name="keterangan" rows="3">{{ form.keterangan.value|default:'' }}</textarea>
+                        {% if form.keterangan.errors %}
+                            <div class="invalid-feedback">
+                                {{ form.keterangan.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> {% trans 'Simpan' %}
+                        </button>
+                        <a href="{% url 'admin_daerah:dusun_list' %}" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> {% trans 'Kembali' %}
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

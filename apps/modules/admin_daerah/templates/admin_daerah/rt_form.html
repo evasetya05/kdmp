@@ -1,0 +1,60 @@
+{% extends 'admin_daerah/base.html' %}
+{% load i18n %}
+
+{% block page_title %}{% if object %}{% trans 'Edit RT' %}{% else %}{% trans 'Tambah RT' %}{% endif %}{% endblock %}
+
+{% block content_title %}{% if object %}{% trans 'Edit RT' %}{% else %}{% trans 'Tambah RT Baru' %}{% endif %}{% endblock %}
+
+{% block content_body %}
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-info">{% trans 'Form RT' %}</h6>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_rw">{% trans 'RW' %} <span class="text-danger">*</span></label>
+                        <select class="form-control {% if form.rw.errors %}is-invalid{% endif %}"
+                                id="id_rw" name="rw" required>
+                            <option value="">-- {% trans 'Pilih RW' %} --</option>
+                            {% for rw_option in form.rw.field.queryset %}
+                                <option value="{{ rw_option.pk }}"
+                                        {% if form.rw.value == rw_option.pk|stringformat:"s" %}selected{% endif %}>
+                                    RW {{ rw_option.nomor }} - {{ rw_option.dusun.nama }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                        {% if form.rw.errors %}
+                            <div class="invalid-feedback">
+                                {{ form.rw.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_nomor">{% trans 'Nomor RT' %} <span class="text-danger">*</span></label>
+                        <input type="number" class="form-control {% if form.nomor.errors %}is-invalid{% endif %}"
+                               id="id_nomor" name="nomor" value="{{ form.nomor.value|default:'' }}"
+                               min="1" required>
+                        {% if form.nomor.errors %}
+                            <div class="invalid-feedback">
+                                {{ form.nomor.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info">
+                            <i class="fas fa-save"></i> {% trans 'Simpan' %}
+                        </button>
+                        <a href="{% url 'admin_daerah:rt_list' %}" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> {% trans 'Kembali' %}
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

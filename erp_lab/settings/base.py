@@ -35,11 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
  
     # Local apps
-
+    'apps.modules.admin_daerah',
+    'apps.modules.anggota',
+    'apps.core',
     'ledger',
-
-    'apps.core',  # Updated to use full Python path
- 
     'extras',
     'users',
     
@@ -99,7 +98,7 @@ STATIC_ROOT = '/home/teknusas/erp.teknusa.com/static'
 
 # Authentication settings
 LOGIN_URL = "accounts:login"  # URL name for the login page
-LOGIN_REDIRECT_URL = "home"  # URL name of the home page (root URL)
+LOGIN_REDIRECT_URL = "dashboard"  # URL name of the dashboard page after login
 LOGOUT_REDIRECT_URL = "accounts:login"  # Redirect to login page after logout
 
 AUTHENTICATION_BACKENDS = [
