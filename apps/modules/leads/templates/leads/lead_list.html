@@ -1,0 +1,150 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+{% block title %}Daftar Lead{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Daftar Lead</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <a href="{% url 'leads:lead_create' %}" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Tambah Lead
+            </a>
+        </div>
+    </div>
+
+    <style>
+    /* ======== TABEL ======== */
+    .table-container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .table {
+        margin-bottom: 0;
+    }
+
+    .table th {
+        background-color: #f8f9fa;
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    .table td, .table th {
+        padding: 12px 16px;
+        vertical-align: middle;
+    }
+
+    .table tbody tr:hover {
+        background-color: rgba(0,0,0,.02);
+    }
+
+    .badge {
+        font-weight: 500;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+
+    /* Responsive table */
+    @media (max-width: 768px) {
+        .table-container {
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+        }
+        
+        .table thead {
+            display: none;
+        }
+        
+        .table, .table tbody, .table tr, .table td {
+            display: block;
+            width: 100%;
+        }
+        
+        .table tr {
+            margin-bottom: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+        }
+        
+        .table td {
+            text-align: right;
+            padding-left: 50%;
+            position: relative;
+        }
+        
+        .table td::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 16px;
+            width: 45%;
+            padding-right: 10px;
+            font-weight: 600;
+            text-align: left;
+        }
+        
+        .table td:last-child {
+            border-bottom: 0;
+        }
+    }
+    </style>
+
+    <div class="table-responsive">
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Perusahaan</th>
+            <th>Status</th>
+            <th>Jumlah Interaksi</th>
+            <th>Interaksi Terakhir</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for lead in leads %}
+        <tr>
+            <td data-label="Nama">
+                <a href="{% url 'leads:lead_edit' lead.pk %}">{{ lead.name }}</a>
+            </td>
+            <td data-label="Email">{{ lead.email|default:"-" }}</td>
+            <td data-label="Perusahaan">{{ lead.company|default:"-" }}</td>
+            <td data-label="Status">{{ lead.get_status_display }}</td>
+            <td data-label="Jumlah Interaksi">{{ lead.interactions.count }}</td>
+            <td data-label="Interaksi Terakhir">
+                {% if lead.last_note %}
+                    {{ lead.last_note|truncatechars:50 }}
+                    <br>
+                    <a href="{% url 'leads:lead_detail' lead.pk %}">Detail ➜</a>
+                {% else %}
+                    <em>Belum ada interaksi.</em>
+                    <br>
+                    <a href="{% url 'leads:lead_detail' lead.pk %}">Tambah</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="6">Belum ada lead.</td></tr>
+        {% endfor %}
+    </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Tambahkan script khusus halaman di sini jika diperlukan
+    document.addEventListener('DOMContentLoaded', function() {
+        // Inisialisasi tooltip
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    });
+</script>
+{% endblock %}

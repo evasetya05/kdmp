@@ -1,0 +1,132 @@
+/* === GAYA DASAR === */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #333;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2b3a67;
+}
+
+.add-btn {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding: 10px 16px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    background-color: #0056d6;
+}
+
+/* === BLOK PER MARKET === */
+.market-block {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 35px;
+    border-radius: 14px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid #007bff30;
+}
+
+.market-block h2 {
+    color: #007bff;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #007bff22;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+}
+
+/* === KELOMPOK CHANNEL === */
+.channel-group h3 {
+    margin-top: 20px;
+    color: #444;
+    font-size: 1.1rem;
+}
+
+/* === TABEL === */
+.channel-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+.channel-table th, 
+.channel-table td {
+    border: 1px solid #e0e6ef;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.channel-table th {
+    background-color: #f1f5ff;
+    color: #2b3a67;
+    font-weight: 600;
+}
+
+.channel-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.channel-table tr:hover {
+    background-color: #eef5ff;
+}
+
+/* === STATUS POSTING === */
+.channel-table td:nth-child(6) {
+    text-align: center;
+    font-weight: 600;
+}
+
+.channel-table td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.channel-table td a:hover {
+    text-decoration: underline;
+}
+
+/* === STATUS WARNA === */
+.status-posted {
+    color: #2e7d32;
+    background-color: #e6f4ea;
+    padding: 3px 8px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.status-pending {
+    color: #b36b00;
+    background-color: #fff5e6;
+    padding: 3px 8px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* === RESPONSIF === */
+@media (max-width: 768px) {
+    body {
+        margin: 20px;
+    }
+    .channel-table th, .channel-table td {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+}
