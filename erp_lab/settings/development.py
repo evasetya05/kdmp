@@ -8,7 +8,7 @@ CSRF_TRUSTED_ORIGINS = ['https://*.preview.app.github.dev']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'erp_lab',
+        'NAME': 'kdmp',
         'USER': 'eva',
         'PASSWORD': 'abc',
         'HOST': '127.0.0.1',

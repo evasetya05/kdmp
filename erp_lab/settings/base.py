@@ -35,15 +35,11 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
  
     # Local apps
-    'post_media',
+
     'ledger',
-    'leads',
-    'lean',
+
     'apps.core',  # Updated to use full Python path
-    #'apps.extras.job',  # Job app
-    #'apps.extras.blog',  # Blog app
-    #'apps.extras.legal',  # Legal app
-    #'apps.extras.vacancy',  # Vacancy app
+ 
     'extras',
     'users',
     

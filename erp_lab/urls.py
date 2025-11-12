@@ -20,8 +20,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     
     # Local apps with namespaces
-    path('post_media/', include(('post_media.urls', 'post_media'), namespace='post_media')),
+   
     path('ledger/', include(('ledger.urls', 'ledger'), namespace='ledger')),
-    path('leads/', include(('leads.urls', 'leads'), namespace='leads')),
-    path('lean/', include(('lean.urls', 'lean'), namespace='lean')),
+   
 ]
