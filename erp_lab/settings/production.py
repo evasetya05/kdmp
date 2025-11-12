@@ -2,8 +2,8 @@ from .base import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['erp.teknusa.com', 'www.erp.teknusa.com']
-CSRF_TRUSTED_ORIGINS = ['https://erp.teknusa.com', 'https://www.erp.teknusa.com']
+ALLOWED_HOSTS = ['kdmpsumberoto.teknusa.com', 'www.kdmpsumberoto.teknusa.com']
+CSRF_TRUSTED_ORIGINS = ['https://kdmpsumberoto.teknusa.com', 'https://www.kdmpsumberoto.teknusa.com']
 
 DATABASES = {
     'default': {

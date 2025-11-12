@@ -2,8 +2,8 @@ import os
 import sys
 
 # Tambahkan path project agar Python tahu di mana kode Django kamu
-sys.path.append('/home/teknusas/erp')
-sys.path.append('/home/teknusas/erp/erp_lab')
+sys.path.append('/home/teknusas/kdmp')
+sys.path.append('/home/teknusas/kdmpsumberoto/erp_lab')
 
 # Gunakan environment variable DJANGO_SETTINGS_MODULE dari server
 # Kalau tidak ada, fallback ke production (default aman di hosting) coba lagi
