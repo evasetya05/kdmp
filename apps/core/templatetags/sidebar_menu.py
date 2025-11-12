@@ -22,6 +22,14 @@ def create_menu(user):
             ]
         })
     
+    # Only show Anggota menu if user has permission
+    if user.is_authenticated and (user.is_staff or user.is_superuser):
+        menu_items.append({
+            'label': 'Anggota',
+            'url': 'anggota:list',
+            'icon': 'fas fa-users',
+        })
+    
 
 
     return menu_items

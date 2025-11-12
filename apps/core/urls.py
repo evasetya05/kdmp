@@ -12,6 +12,9 @@ from .views.company_views import (
 )
 from .views.index_views import index, pricing, checkout, payment
 from .views.user_views import ListUserView, EditUserView, user_profile
+from .views.anggota_views import AnggotaListView
+
+app_name = 'anggota'
 
 index_pattern = (
     [
@@ -47,8 +50,15 @@ user_pattern = (
     'user'
 )
 
+anggota_pattern = (
+    [
+        path('', AnggotaListView.as_view(), name="list"),
+    ]
+)
+
 urlpatterns = [
     path('', include(index_pattern)),
     path('company/', include(company_pattern)),
     path('user/', include(user_pattern)),
+    path('anggota/', include(anggota_pattern)),
 ]

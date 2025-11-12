@@ -35,9 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
  
     # Local apps
-    'apps.modules.admin_daerah',
-    'apps.modules.anggota',
+
+
     'apps.core',
+
+    'apps.modules.admin_daerah',
+
     'ledger',
     'extras',
     'users',

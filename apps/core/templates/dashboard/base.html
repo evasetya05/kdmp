@@ -15,14 +15,14 @@
             position: fixed;
             top: 56px; /* Height of navbar */
             bottom: 0;
-            left: -250px; /* Hide by default on mobile */
+            left: -220px; /* Hide by default on mobile */
             z-index: 1000;
             padding: 20px 0 0;
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
             overflow-y: auto;
             transition: all 0.3s;
             background-color: #f8f9fa;
-            width: 250px;
+            width: 220px; /* Reduced from 250px */
         }
         
         /* Show sidebar when toggled */
@@ -58,7 +58,7 @@
                 left: 0;
             }
             .main-content {
-                margin-left: 250px;
+                margin-left: 220px; /* Updated to match new sidebar width */
             }
         }
 
@@ -92,7 +92,7 @@
 
         main {
             margin-top: 1rem;
-            padding: 20px;
+            padding: 15px; /* Reduced from 20px */
         }
 
         @media (max-width: 767.98px) {

@@ -28,6 +28,7 @@ urlpatterns = [
     # Local apps
     path('ledger/', include(('ledger.urls', 'ledger'), namespace='ledger')),
     path('admin-daerah/', include(('apps.modules.admin_daerah.urls', 'admin_daerah'), namespace='admin_daerah')),
+    path('anggota/', include('apps.core.urls')),
 ]
 
 # Serve media files in development
