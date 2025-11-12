@@ -58,9 +58,15 @@
 {% block extra_css %}
 {{ block.super }}
 <style>
-    /* Override sidebar margin for landing page to center content */
+    /* Prevent accidental horizontal scroll on landing page */
+    body {
+        overflow-x: hidden;
+    }
+
     .main-content {
         margin-left: 0 !important;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 </style>
 {% endblock %}
