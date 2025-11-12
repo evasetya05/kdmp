@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8 text-center">
             <h1 class="display-4 mb-4">Selamat Datang di Koperasi Desa Merah Putih Desa Sumberoto</h1>
-            <p class="lead mb-5">Sistem Manajemen Terpadu untuk Bisnis Anda</p>
+
             
             {% if user.is_authenticated %}
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
@@ -18,9 +18,7 @@
                 <a href="{% url 'anggota:public_create' %}" class="btn btn-success btn-lg px-4 me-sm-3">
                     <i class="fas fa-user-plus"></i> Daftar Anggota Koperasi
                 </a>
-                <a href="{% url 'login' %}" class="btn btn-outline-primary btn-lg px-4">
-                    <i class="fas fa-sign-in-alt"></i> Masuk
-                </a>
+                
             </div>
             {% endif %}
             
