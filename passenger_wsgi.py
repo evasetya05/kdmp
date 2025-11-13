@@ -1,16 +1,12 @@
 import os
 import sys
 
-# Tambahkan path project agar Python tahu di mana kode Django kamu
+# Pastikan Python tahu di mana proyek kamu
 sys.path.append('/home/teknusas/kdmpsumberoto')
 sys.path.append('/home/teknusas/kdmpsumberoto/kdmp')
 
-# Gunakan environment variable DJANGO_SETTINGS_MODULE dari server
-# Kalau tidak ada, fallback ke production (default aman di hosting) coba lagi
-os.environ.setdefault(
-    'DJANGO_SETTINGS_MODULE',
-    os.getenv('DJANGO_SETTINGS_MODULE', 'kdmp.settings.production')
-)
+# Paksa Django untuk pakai settings dari kdmp
+os.environ['DJANGO_SETTINGS_MODULE'] = 'kdmp.settings'
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
