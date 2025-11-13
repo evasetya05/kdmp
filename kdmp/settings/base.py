@@ -97,7 +97,7 @@ USE_L10N = True
 USE_TZ = False
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/teknusas/erp.teknusa.com/static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Authentication settings
 LOGIN_URL = "accounts:login"  # URL name for the login page
