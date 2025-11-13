@@ -10,5 +10,8 @@ class Account(models.Model):
     locked = models.BooleanField(default=False)
     coa_role_default = models.CharField(max_length=100, blank=True, null=True)
 
+    class Meta:
+        app_label = 'ledger'  # ✅ tambahkan ini
+
     def __str__(self):
         return self.account_name
