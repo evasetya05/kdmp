@@ -1,11 +1,17 @@
 import os
 import sys
 
-# Pastikan Python tahu di mana proyek kamu
-sys.path.append('/home/teknusas/kdmpsumberoto')
-sys.path.append('/home/teknusas/kdmpsumberoto/kdmp')
+# Add the project directory to the Python path
+project_home = '/home/teknusas/kdmpsumberoto'
+if project_home not in sys.path:
+    sys.path.insert(0, project_home)
 
-# Gunakan production settings
+# Add the kdmp directory to the Python path
+project_app = '/home/teknusas/kdmpsumberoto/kdmp'
+if project_app not in sys.path:
+    sys.path.insert(0, project_app)
+
+# Set the Django settings module
 os.environ['DJANGO_SETTINGS_MODULE'] = 'kdmp.settings.production'
 
 from django.core.wsgi import get_wsgi_application
