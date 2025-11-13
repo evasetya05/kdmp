@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
     'apps.modules.admin_daerah',
 
-    'ledger',
+    'apps.modules.ledger',
     'extras',
     'users',
     
