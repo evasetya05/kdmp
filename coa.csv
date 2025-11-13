@@ -1,0 +1,76 @@
+﻿Nomor Akun,Nama Akun,Jenis Akun,Balance Type,Status
+1010,Kas,ASET (Aktiva Lancar),Debit,Aktif
+1011,Bank Mandiri,ASET (Aktiva Lancar),Debit,Aktif
+1012,Bank BRI / BritAma,ASET (Aktiva Lancar),Debit,Aktif
+1020,Piutang Anggota,ASET (Aktiva Lancar),Debit,Aktif
+1030,Piutang Usaha,ASET (Aktiva Lancar),Debit,Aktif
+1040,Persediaan Barang Dagang,ASET (Aktiva Lancar),Debit,Aktif
+1050,Uang Muka Pembelian,ASET (Aktiva Lancar),Debit,Aktif
+1110,Cadangan Piutang Tak Tertagih,ASET (Kontra Aktiva),Kredit,Aktif
+1200,Peralatan Kantor,ASET (Aktiva Tetap),Debit,Aktif
+1201,Akumulasi Penyusutan Peralatan,ASET (Kontra Aktiva),Kredit,Aktif
+1210,Kendaraan Operasional,ASET (Aktiva Tetap),Debit,Aktif
+1211,Akumulasi Penyusutan Kendaraan,ASET (Kontra Aktiva),Kredit,Aktif
+1220,Tanah,ASET (Aktiva Tetap),Debit,Aktif
+1230,Bangunan,ASET (Aktiva Tetap),Debit,Aktif
+1231,Akumulasi Penyusutan Bangunan,ASET (Kontra Aktiva),Kredit,Aktif
+1300,Biaya Dibayar Dimuka,ASET (Aktiva Lancar),Debit,Aktif
+2010,Utang Usaha,KEWAJIBAN (Pasiva Lancar),Kredit,Aktif
+2020,Utang Gaji,KEWAJIBAN (Pasiva Lancar),Kredit,Aktif
+2030,Utang Bunga,KEWAJIBAN (Pasiva Lancar),Kredit,Aktif
+2040,Utang Jangka Pendek,KEWAJIBAN (Pasiva Lancar),Kredit,Aktif
+2050,Utang Jangka Panjang,KEWAJIBAN (Pasiva Tidak Lancar),Kredit,Aktif
+2060,Pendapatan Diterima di Muka,KEWAJIBAN (Pasiva Lancar),Kredit,Aktif
+2070,Utang Lain-lain,KEWAJIBAN,Kredit,Aktif
+2080,Utang Kartu Kredit,KEWAJIBAN,Kredit,Aktif
+3010,Simpanan Pokok,MODAL,Kredit,Aktif
+3020,Simpanan Wajib,MODAL,Kredit,Aktif
+3030,Simpanan Sukarela,MODAL,Kredit,Aktif
+3040,Dana Cadangan,MODAL,Kredit,Aktif
+3050,Modal Sumbangan,MODAL,Kredit,Aktif
+3990,Sisa Hasil Usaha (SHU) Ditahan,MODAL,Kredit,Aktif
+3999,Saldo Laba / Rugi Tahun Berjalan,MODAL,Kredit,Aktif
+4010,Pendapatan Penjualan Barang,PENDAPATAN,Kredit,Aktif
+4020,Pendapatan Jasa Simpan Pinjam,PENDAPATAN,Kredit,Aktif
+4030,Pendapatan Sewa,PENDAPATAN,Kredit,Aktif
+4040,Pendapatan Bunga / Investasi,PENDAPATAN,Kredit,Aktif
+4050,Pendapatan Pelatihan,PENDAPATAN,Kredit,Aktif
+4051,Pendapatan Konsultasi SDM,PENDAPATAN,Kredit,Aktif
+4052,Pendapatan Lain-lain,PENDAPATAN,Kredit,Aktif
+5010,Harga Pokok Penjualan,BEBAN POKOK,Debit,Aktif
+5020,Biaya Pembelian Barang,BEBAN POKOK,Debit,Aktif
+6010,Biaya Iklan & Promosi,BEBAN,Debit,Aktif
+6020,Biaya Amortisasi,BEBAN,Debit,Aktif
+6030,Biaya Transportasi,BEBAN,Debit,Aktif
+6040,Kerugian Piutang Tak Tertagih,BEBAN,Debit,Aktif
+6050,Biaya Bank,BEBAN,Debit,Aktif
+6060,Komisi Penjualan,BEBAN,Debit,Aktif
+6070,Biaya Penyusutan,BEBAN,Debit,Aktif
+6080,Tunjangan Karyawan,BEBAN,Debit,Aktif
+6081,Gaji & Upah,BEBAN,Debit,Aktif
+6082,Honor Tenaga Paruh Waktu,BEBAN,Debit,Aktif
+6090,Biaya Pengiriman,BEBAN,Debit,Aktif
+6110,Hadiah / Bingkisan,BEBAN,Debit,Aktif
+6120,Asuransi,BEBAN,Debit,Aktif
+6130,Bunga Pinjaman Jangka Pendek,BEBAN,Debit,Aktif
+6131,Bunga Pinjaman Jangka Panjang,BEBAN,Debit,Aktif
+6140,"Jasa Profesional (Konsultan, Audit)",BEBAN,Debit,Aktif
+6150,Biaya Perizinan,BEBAN,Debit,Aktif
+6170,Biaya Pemeliharaan & Perbaikan,BEBAN,Debit,Aktif
+6180,Biaya Konsumsi & Hiburan,BEBAN,Debit,Aktif
+6181,Biaya Tiket Pesawat,BEBAN,Debit,Aktif
+6182,Biaya Transportasi Darat,BEBAN,Debit,Aktif
+6183,Biaya Pelatihan Staf,BEBAN,Debit,Aktif
+6190,Biaya Kantor,BEBAN,Debit,Aktif
+6191,Biaya Internet,BEBAN,Debit,Aktif
+6192,Biaya Hosting & Domain,BEBAN,Debit,Aktif
+6220,Biaya Percetakan,BEBAN,Debit,Aktif
+6230,Biaya Pos,BEBAN,Debit,Aktif
+6240,Sewa,BEBAN,Debit,Aktif
+6250,Pemeliharaan Umum,BEBAN,Debit,Aktif
+6260,Gaji Pengurus / Manajemen,BEBAN,Debit,Aktif
+6270,Biaya ATK & Persediaan Kantor,BEBAN,Debit,Aktif
+6280,Pajak & Retribusi,BEBAN,Debit,Aktif
+6290,"Biaya Utilitas (Listrik, Air, Telepon)",BEBAN,Debit,Aktif
+6500,Biaya Tak Terduga,BEBAN,Debit,Aktif
+6600,Kerugian Keputusan Salah,BEBAN,Debit,Aktif
