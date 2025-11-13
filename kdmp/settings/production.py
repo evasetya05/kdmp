@@ -2,6 +2,9 @@ from .base import *
 
 DEBUG = False
 
+# URL configuration
+ROOT_URLCONF = 'kdmp.urls'
+
 ALLOWED_HOSTS = ['kdmpsumberoto.teknusa.com', 'www.kdmpsumberoto.teknusa.com']
 CSRF_TRUSTED_ORIGINS = ['https://kdmpsumberoto.teknusa.com', 'https://www.kdmpsumberoto.teknusa.com']
 
